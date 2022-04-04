@@ -11,6 +11,15 @@ describe LinkedList do
             expect(list.to_s).to eql("(30) -> (31) -> nil")
         end
     end
+    describe "#tail" do
+        it "returns the last node" do
+            list = LinkedList.new
+            list.append(1)
+            list.append(2)
+            node = list.append(3)
+            expect(list.tail).to eql(node)
+        end
+    end
     describe "#size" do
         it "returning number of nodes" do
             list = LinkedList.new

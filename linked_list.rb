@@ -29,6 +29,17 @@ class LinkedList
         @head = node
     end
 
+    def tail
+        node = @head
+        if @head == nil
+            print "There are no nodes"
+        end
+        until node.next_node == nil
+            node = node.next_node
+        end
+        tail = node
+    end
+
     def size
         node = @head
         counter = 0
