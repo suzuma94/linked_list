@@ -104,7 +104,7 @@ class LinkedList
             node_new = Node.new(value)
             @head = node_new
             @tail = node_new
-        elsif index == 0 && @head != nil
+        elsif index == 0 
             node_new = Node.new(value, @head)
             @head = node_new
         elsif index < size && index > 1
@@ -132,7 +132,7 @@ class LinkedList
         print "There are no that many nodes, please enter a node index between (0 - #{size-1})"
     elsif @head == nil
         print "There are no nodes"
-    elsif index == 0 && @head != nil
+    elsif index == 0 
             @head = @head.next_node
     elsif index < size && index > 1 && index != (size - 1) #lastnode
             (index-1).times do
@@ -140,18 +140,15 @@ class LinkedList
             end
             node_next = node.next_node
             node.next_node = node_next.next_node
-            node_next == nil
         elsif  index < size && index == 1
             node_next = @head.next_node 
             @head.next_node = node_next.next_node
-            node_next == nil
         elsif index == (size - 1)
             (index-1).times do
                 node = node.next_node
             end
             node_next = node.next_node
             node.next_node = nil
-            node_next = nil
             @tail = node
         end
     end
@@ -161,11 +158,11 @@ end
 a = LinkedList.new
 
 a.append(30)
-a.append(40)
-a.append(50)
+a.append(31)
 a.prepend(39)
 
-a.insert_at(333, 0)
+a.insert_at(33,0)
+a.remove_at(2)
 
 
 
